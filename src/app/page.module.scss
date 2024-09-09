@@ -8,30 +8,38 @@
         position: absolute;
         width: 100%;
         height: 80lvh;
-      
+
         // Paper grid background with vertical and horizontal lines
         background-image:
-          linear-gradient(#575757 1px, transparent 1px), /* Horizontal lines */
-          linear-gradient(90deg, #575757 1px, transparent 1px); /* Vertical lines */
-      
+            linear-gradient(#575757 1px, transparent 1px),
+            /* Horizontal lines */
+            linear-gradient(90deg, #575757 1px, transparent 1px);
+        /* Vertical lines */
+
         background-size: 40px 40px; // Grid cell size (40px)
         background-position: 0 0; // Position of the grid lines
-      
+
         // Fade effect using a linear gradient mask
-        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); 
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
         mask-size: 100% 100%; // Ensure it covers the entire height
         mask-position: top;
-      
-        // Optional: Add padding, border, and box-shadow for effect
-        padding: 20px;
-        border: 1px solid #ccc;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      
-        z-index: 1; // Ensure it's below the content
-      }
+
+        z-index: 2; // Ensure it's below the content
+    }
+
+    .lights {
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        height: 77rem;
+        background: radial-gradient(circle at 110%, #ec4b4b8f, transparent 70%, transparent 75%, transparent 100%);
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+        mask-size: 100% 100%; // Ensure it covers the entire height
+        mask-position: top;
+    }
 
     .pageContent {
-        z-index: 2;
+        z-index: 3;
         position: relative;
         background: transparent;
         padding-left: 1rem;
@@ -51,7 +59,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 40rem;
+            height: 50rem;
 
             .title {
                 font-size: 4rem;

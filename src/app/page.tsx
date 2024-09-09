@@ -6,6 +6,7 @@ export default function Product() {
   return (
     <div className={styles.page}>
       <div className={styles.grid} />
+      <div className={styles.lights} />
       <div className={styles.pageContent}>
         <div className={styles.landing}>
           <div className={styles.title}>AstroLog</div>
