@@ -15,8 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={styles.body}>
-        <NavBar />
+      <body>
         {children}
       </body>
     </html>

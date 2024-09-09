@@ -1,0 +1,12 @@
+.card {
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background: radial-gradient(#030303, #464646);
+
+    .header {
+        .title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+    }
+}
