@@ -1,7 +1,7 @@
 .card {
     border-radius: 0.5rem;
     padding: 2rem;
-    background-color: rgb(17, 17, 17);
+    background-color: var(--bg-dark);
     border: 1px solid rgba(80, 80, 80, 0.463);
 
     .header {
@@ -29,5 +29,6 @@
 
     .children {
         line-height: 1.75rem;
+        color: var(--font-dark);
     }
 }

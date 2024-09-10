@@ -4,6 +4,9 @@
 
 :root {
   --nav-bar-height: 3rem;
+  --bg: #131313;
+  --bg-dark: rgb(16, 16, 16);
+  --font-dark: rgb(200, 200, 200)
 }
 
 @layer base {

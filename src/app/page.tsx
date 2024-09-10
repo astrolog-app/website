@@ -14,7 +14,10 @@ export default function Product() {
       <div className={styles.pageContent}>
         <div className={styles.landing}>
           <div className={styles.title}>AstroLog</div>
-          <div className={styles.subTitle}>Subtitle</div>
+          <div className={styles.subTitle}>
+            The astrophotography application for automatically logging and classifying
+            imaging sessions.
+          </div>
           <div className={styles.buttons}>
             <Button>Purchase</Button>
             <Button variant='ghost'>Download for free</Button>
