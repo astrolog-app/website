@@ -2,10 +2,13 @@ import { Button } from '@/components/ui/button';
 import styles from './page.module.scss';
 import FeatureCard from '@/components/featureCard';
 import { AnalyticsSVG, BackupSVG, GallerySVG, LogSVG, OpenSourceSVG, RocketSVG } from '@/public/svgs';
+import NavBar from '@/components/navBar';
+import Footer from '@/components/footer';
 
 export default function Product() {
   return (
     <div className={styles.page}>
+      <NavBar />
       <div className={styles.grid} />
       <div className={styles.lights} />
       <div className={styles.pageContent}>
@@ -18,29 +21,29 @@ export default function Product() {
           </div>
         </div>
         <div className={styles.features}>
-            <FeatureCard icon={<LogSVG />} title="Log & Classify">
-              AstroLog helps you to log and classify with analyzing your recent
-              imaging sessions.
-            </FeatureCard>
-            <FeatureCard icon={<BackupSVG />} title="Automatic Backup's">
-              With the automatic backup system of AstroLog, your data
-              will always be safe, when setup correctly.
-            </FeatureCard>
-            <FeatureCard icon={<GallerySVG />} title="Gallery">
-              The integrated gallery lets you view all of your processed images.
-            </FeatureCard>
-            <FeatureCard icon={<AnalyticsSVG />} title="Analytics">
-              AstroLog analyzes your imaging sessions and displays interesting
-              statistics about your data.
-            </FeatureCard>
-            <FeatureCard icon={<RocketSVG />} title="Blazing Fast">
-              Thanks to a powerful and secure rust backend, AstroLog's image
-              analysis is blazing fast.
-            </FeatureCard>
-            <FeatureCard icon={<OpenSourceSVG />} title="Open Source">
-              The source code of AstroLog is publicly available and lets 
-              you contibute to the project.
-            </FeatureCard>
+          <FeatureCard icon={<LogSVG />} title="Log & Classify">
+            AstroLog helps you to log and classify with analyzing your recent
+            imaging sessions.
+          </FeatureCard>
+          <FeatureCard icon={<BackupSVG />} title="Automatic Backup's">
+            With the automatic backup system of AstroLog, your data
+            will always be safe, when setup correctly.
+          </FeatureCard>
+          <FeatureCard icon={<GallerySVG />} title="Gallery">
+            The integrated gallery lets you view all of your processed images.
+          </FeatureCard>
+          <FeatureCard icon={<AnalyticsSVG />} title="Analytics">
+            AstroLog analyzes your imaging sessions and displays interesting
+            statistics about your data.
+          </FeatureCard>
+          <FeatureCard icon={<RocketSVG />} title="Blazing Fast">
+            Thanks to a powerful and secure rust backend, AstroLog's image
+            analysis is blazing fast.
+          </FeatureCard>
+          <FeatureCard icon={<OpenSourceSVG />} title="Open Source">
+            The source code of AstroLog is publicly available and lets
+            you contibute to the project.
+          </FeatureCard>
         </div>
       </div>
       <div className={styles.test}>
@@ -52,6 +55,9 @@ export default function Product() {
         </svg>
       </div>
       <div className={styles.test2}></div>
+      <div className={styles.pageContent}>
+        <Footer />
+      </div>
     </div>
   );
 }
