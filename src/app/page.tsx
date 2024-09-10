@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import styles from './page.module.scss';
 import FeatureCard from '@/components/featureCard';
+import { AnalyticsSVG, BackupSVG, GallerySVG, LogSVG, OpenSourceSVG, RocketSVG } from '@/public/svgs';
 
 export default function Product() {
   return (
@@ -17,28 +18,29 @@ export default function Product() {
           </div>
         </div>
         <div className={styles.features}>
-          <div className={styles.featuresColumn}>
-            <FeatureCard title="feature">
-              xyz
+            <FeatureCard icon={<LogSVG />} title="Log & Classify">
+              AstroLog helps you to log and classify with analyzing your recent
+              imaging sessions.
             </FeatureCard>
-            <FeatureCard title="feature">
-              dasd
+            <FeatureCard icon={<BackupSVG />} title="Automatic Backup's">
+              With the automatic backup system of AstroLog, your data
+              will always be safe, when setup correctly.
             </FeatureCard>
-            <FeatureCard title="feature">
-              xyz
+            <FeatureCard icon={<GallerySVG />} title="Gallery">
+              The integrated gallery lets you view all of your processed images.
             </FeatureCard>
-          </div>
-          <div className={styles.featuresColumn}>
-            <FeatureCard title="feature">
-              xyz
+            <FeatureCard icon={<AnalyticsSVG />} title="Analytics">
+              AstroLog analyzes your imaging sessions and displays interesting
+              statistics about your data.
             </FeatureCard>
-            <FeatureCard title="feature">
-              xyz
+            <FeatureCard icon={<RocketSVG />} title="Blazing Fast">
+              Thanks to a powerful and secure rust backend, AstroLog's image
+              analysis is blazing fast.
             </FeatureCard>
-            <FeatureCard title="feature">
-              xyz
+            <FeatureCard icon={<OpenSourceSVG />} title="Open Source">
+              The source code of AstroLog is publicly available and lets 
+              you contibute to the project.
             </FeatureCard>
-          </div>
         </div>
       </div>
       <div className={styles.test}>

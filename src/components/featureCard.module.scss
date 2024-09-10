@@ -2,11 +2,32 @@
     border-radius: 0.5rem;
     padding: 2rem;
     background-color: rgb(17, 17, 17);
+    border: 1px solid rgba(80, 80, 80, 0.463);
 
     .header {
+        display: flex;
+        margin-bottom: 1rem;
+        align-items: center;
+
+        .icon {
+            height: 100%;
+            width: 2.25rem;
+            padding: 0.5rem;
+            border: solid yellow 1px;
+            background-color: rgba(255, 255, 0, 0.144);
+            border-radius: 0.5rem;
+            fill: white;
+            margin-right: 1rem;
+        }
+
         .title {
             font-size: 1.5rem;
             font-weight: 600;
+            line-height: 0;
         }
+    }
+
+    .children {
+        line-height: 1.75rem;
     }
 }
