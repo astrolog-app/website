@@ -24,29 +24,24 @@ export default function Product() {
           </div>
         </div>
         <div className={styles.features}>
-          <FeatureCard icon={<LogSVG />} title="Log & Classify">
-            AstroLog helps you to log and classify with analyzing your recent
-            imaging sessions.
-          </FeatureCard>
-          <FeatureCard icon={<BackupSVG />} title="Automatic Backup's">
-            With the automatic backup system of AstroLog, your data
-            will always be safe, when setup correctly.
-          </FeatureCard>
-          <FeatureCard icon={<GallerySVG />} title="Gallery">
-            The integrated gallery lets you view all of your processed images.
-          </FeatureCard>
-          <FeatureCard icon={<AnalyticsSVG />} title="Analytics">
-            AstroLog analyzes your imaging sessions and displays interesting
-            statistics about your data.
-          </FeatureCard>
-          <FeatureCard icon={<RocketSVG />} title="Blazing Fast">
-            Thanks to a powerful and secure rust backend, AstroLog's image
-            analysis is blazing fast.
-          </FeatureCard>
-          <FeatureCard icon={<OpenSourceSVG />} title="Open Source">
-            The source code of AstroLog is publicly available and lets
-            you contibute to the project.
-          </FeatureCard>
+        <FeatureCard icon={<LogSVG />} iconColor='rgb(94, 79, 162)' title="Log & Classify">
+  AstroLog helps you to log and classify with analyzing your recent imaging sessions.
+</FeatureCard>
+<FeatureCard icon={<BackupSVG />} iconColor='rgb(244, 114, 182)' title="Automatic Backup's">
+  With the automatic backup system of AstroLog, your data will always be safe, when setup correctly.
+</FeatureCard>
+<FeatureCard icon={<GallerySVG />} iconColor='rgb(240, 113, 103)' title="Gallery">
+  The integrated gallery lets you view all of your processed images.
+</FeatureCard>
+<FeatureCard icon={<AnalyticsSVG />} iconColor='rgb(52, 199, 89)' title="Analytics">
+  AstroLog analyzes your imaging sessions and displays interesting statistics about your data.
+</FeatureCard>
+<FeatureCard icon={<RocketSVG />} iconColor='rgb(58, 160, 237)' title="Blazing Fast">
+  Thanks to a powerful and secure rust backend, AstroLog's image analysis is blazing fast.
+</FeatureCard>
+<FeatureCard icon={<OpenSourceSVG />} iconColor='rgb(255, 159, 64)' title="Open Source">
+  The source code of AstroLog is publicly available and lets you contribute to the project.
+</FeatureCard>
         </div>
       </div>
       <div className={styles.test}>
