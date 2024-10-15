@@ -68,12 +68,15 @@
             }
 
             .subTitle {
-                font-size: large;
+                margin-top: 0.5rem;
+                font-size: larger;
                 color: var(--font-dark);
+                max-width: 30rem;
+                line-height: 1.75rem;
             }
 
             .buttons {
-                margin-top: 3rem;
+                margin-top: 3.5rem;
 
                 button {
                     margin-right: 0.5rem;
