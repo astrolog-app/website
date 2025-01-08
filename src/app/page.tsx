@@ -37,6 +37,7 @@ export default function Product() {
             AstroLog analyzes your imaging sessions and displays interesting statistics about your data.
           </FeatureCard>
           <FeatureCard icon={<RocketSVG />} iconColor='rgb(58, 160, 237)' title="Blazing Fast">
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
             Thanks to a powerful and secure rust backend, AstroLog's image analysis is blazing fast.
           </FeatureCard>
           <FeatureCard icon={<OpenSourceSVG />} iconColor='rgb(255, 159, 64)' title="Open Source">
