@@ -1,13 +1,104 @@
 .footer {
-    width: 100%;
-    color: var(--font-dark);
+  width: 100%;
+  color: var(--font-dark);
+  display: flex;
+  flex-direction: column;
 
-    .separator {
-        width: 100%;
-        height: 1px;
-        background-color: rgba(173, 173, 173, 0.112);
-        border-radius: 1rem;
-        margin-top: 2.5rem;
-        margin-bottom: 2.5rem;
+  .separator {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(173, 173, 173, 0.112);
+    border-radius: 1rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .credits {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-size: 2rem;
+      font-weight: 500;
     }
+
+    .sub {
+      display: flex;
+      font-size: 0.9rem;
+      margin-top: 0.75rem;
+
+      svg {
+        height: 1.25rem;
+        margin-top: 0.225rem;
+        aspect-ratio: 1/1;
+        margin-left: 0.2rem;
+        margin-right: 0.1rem;
+        fill: red;
+      }
+    }
+  }
+
+  .list {
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-self: center;
+    width: 100%;
+    max-width: 40rem;
+    justify-content: space-between;
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      margin-left: 4rem;
+
+      .title {
+        font-weight: 500;
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .link {
+        transition: color 200ms ease;
+        width: fit-content;
+        margin-bottom: 0.25rem;
+
+        &:hover {
+          color: white;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .footer {
+    .credits {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .list {
+      flex-direction: column;
+      align-items: center;
+
+      .section {
+        margin-left: 0;
+        margin-bottom: 2.5rem;
+        text-align: center;
+
+        .link {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
 }
