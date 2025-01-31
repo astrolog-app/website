@@ -20,9 +20,12 @@
 
     .logo {
       font-size: larger;
-      margin-top: auto;
-      margin-bottom: auto;
       font-weight: 500;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
     }
 
     .navigation {
@@ -36,10 +39,7 @@
         font-size: 0.9rem;
         letter-spacing: 0.05rem;
         border-radius: 5rem;
-        padding-top: 0.25rem;
-        padding-bottom: 0.25rem;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        padding: 0.25rem 0.5rem;
         margin-right: 1rem;
         transition: color 200ms ease;
 
@@ -50,6 +50,28 @@
         &:last-of-type {
           margin-right: 0;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navBarWrapper {
+    .navBar {
+      .hamburger {
+        display: block;
+      }
+
+      .navigation {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: var(--nav-bar-height);
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 1rem 0;
+        text-align: center;
       }
     }
   }

@@ -25,7 +25,7 @@
     .sub {
       display: flex;
       font-size: 0.9rem;
-      margin-top: 0.75rem;
+      margin-top: 0.25rem;
 
       svg {
         height: 1.25rem;
@@ -60,7 +60,7 @@
       .link {
         transition: color 200ms ease;
         width: fit-content;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.2rem;
 
         &:hover {
           color: white;

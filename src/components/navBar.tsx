@@ -1,16 +1,25 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from './navBar.module.scss';
+import { Menu, X } from 'lucide-react';
 
 export default function NavBar() {
+    const [menuOpen, setMenuOpen] = useState(false);
+
     return (
         <div className={styles.navBarWrapper}>
             <div className={styles.navBar}>
                 <Link href='' className={styles.logo}>AstroLog</Link>
-                <div className={styles.navigation}>
-                    <Link href='/'>Product</Link>
-                    <Link href='/purchase'>Purchase</Link>
-                    <Link href='/downloads'>Downloads</Link>
-                    <Link href='/about'>About</Link>
+                <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
+                    {menuOpen ? <X size={24} /> : <Menu size={24} />}
+                </div>
+                <div className={`${styles.navigation} ${menuOpen ? styles.open : ''}`}>
+                    <Link href='/' onClick={() => setMenuOpen(false)}>Product</Link>
+                    <Link href='/purchase' onClick={() => setMenuOpen(false)}>Purchase</Link>
+                    <Link href='/downloads' onClick={() => setMenuOpen(false)}>Downloads</Link>
+                    <Link href='/about' onClick={() => setMenuOpen(false)}>About</Link>
                 </div>
             </div>
         </div>
