@@ -11,7 +11,7 @@ export default function NavBar() {
     return (
         <div className={styles.navBarWrapper}>
             <div className={styles.navBar}>
-                <Link href='' className={styles.logo}>AstroLog</Link>
+                <Link href='/' className={styles.logo}>AstroLog</Link>
                 <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
                     {menuOpen ? <X size={24} /> : <Menu size={24} />}
                 </div>

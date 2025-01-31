@@ -1,10 +1,11 @@
 import styles from './footer.module.scss';
 import Link from "next/link";
+import {Separator} from "@/components/ui/separator";
 
 export default function Footer() {
     return (
         <div className={styles.footer}>
-            <div className={styles.separator}/>
+            <Separator className={styles.separator} />
             <div className={styles.list}>
                 <div className={styles.credits}>
                     <div className={styles.title}>AstroLog</div>
@@ -19,14 +20,14 @@ export default function Footer() {
                 </div>
                 <div className={styles.section}>
                     <div className={styles.title}>Support</div>
-                    <Link href='' className={styles.link}>Documentation</Link>
+                    <Link href='https://docs.astro-log.app/' className={styles.link}>Documentation</Link>
                     <Link href='' className={styles.link}>Community Forum</Link>
-                    <Link href='' className={styles.link}>License Key</Link>
+                    <Link href='/licenseKey' className={styles.link}>License Key</Link>
                 </div>
                 <div className={styles.section}>
                     <div className={styles.title}>Social Media</div>
-                    <Link href='' className={styles.link}>GitHub</Link>
-                    <Link href='' className={styles.link}>AstroBin</Link>
+                    <Link href='https://github.com/astrolog-app/astrolog' className={styles.link}>GitHub</Link>
+                    <Link href='https://www.astrobin.com/users/Rouvi05/' className={styles.link}>AstroBin</Link>
                 </div>
             </div>
         </div>

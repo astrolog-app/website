@@ -1,0 +1,15 @@
+.component {
+  margin-top: var(--nav-bar-height);
+  padding-top: 2.5rem;
+  width: 100%;
+
+  .title {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .separator {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
