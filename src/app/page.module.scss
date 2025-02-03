@@ -63,13 +63,13 @@
             height: 45rem;
 
             .title {
-                font-size: 4.5rem;
-                letter-spacing: 0.5rem;
+                font-size: clamp(3.5rem, 10vw, 4.5rem);
+                letter-spacing: 0.35rem;
             }
 
             .subTitle {
                 margin-top: 0.5rem;
-                font-size: larger;
+                font-size: clamp(1.1rem, 3.5vw, 1.3rem);
                 color: var(--font-dark);
                 max-width: 30rem;
                 line-height: 1.75rem;
@@ -121,8 +121,14 @@
 }
 
 @media (max-width: 750px) {
-    .page .pageContent .features {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(6, auto);
+    .page .pageContent {
+        .landing {
+            align-items: center;
+            text-align: center;
+        }
+        .features {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(6, auto);
+        }
     }
 }

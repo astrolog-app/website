@@ -13,7 +13,7 @@ export default function NavBar() {
             <div className={styles.navBar}>
                 <Link href='/' className={styles.logo}>AstroLog</Link>
                 <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
-                    {menuOpen ? <X size={24} /> : <Menu size={24} />}
+                    {menuOpen ? <X size={30} /> : <Menu size={30} />}
                 </div>
                 <div className={`${styles.navigation} ${menuOpen ? styles.open : ''}`}>
                     <Link href='/' onClick={() => setMenuOpen(false)}>Product</Link>
