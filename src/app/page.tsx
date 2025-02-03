@@ -74,9 +74,7 @@ export default function Product() {
                 </svg>
             </div>
             <div className={styles.test2}></div>
-            <div className={styles.pageContent}>
-                <Footer/>
-            </div>
+            <Footer/>
         </div>
     );
 }
