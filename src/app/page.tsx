@@ -41,7 +41,7 @@ export default function Product() {
                 </div>
                 <div className={styles.features}>
                     <FeatureCard icon={<LogSVG/>} iconColor='rgb(94, 79, 162)' title="Log & Classify">
-                        AstroLog helps you to log and classify with analyzing your recent imaging sessions.
+                        AstroLog helps you to log and classify your recent imaging sessions by analyzing them.
                     </FeatureCard>
                     <FeatureCard icon={<BackupSVG/>} iconColor='rgb(244, 114, 182)' title="Automatic Backup's">
                         With the automatic backup system of AstroLog, your data will always be safe, when setup
