@@ -37,3 +37,27 @@
         color: var(--font-dark);
     }
 }
+
+@media (max-width: 750px) {
+    .card {
+        padding: 1.5rem;
+
+        .header {
+            margin-bottom: 0.75rem;
+
+            .icon {
+                width: 2rem;
+                margin-right: 1.2rem;
+            }
+
+            .title {
+                font-size: 1.25rem;
+            }
+        }
+
+        .children {
+            font-size: 0.9rem;
+            line-height: 1.5rem;
+        }
+    }
+}

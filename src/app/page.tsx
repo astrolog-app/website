@@ -16,12 +16,12 @@ export default function Product() {
         },
         {
             title: "AstroLog v1.0.0",
-            description: "Launch of the first stable version with core features: manual logging, equipment tracking, and session management.",
+            description: "First stable release with manual logging, equipment management, and a backup system.",
             status: "current",
         },
         {
-            title: "Backup System",
-            description: "Implementation of local and cloud backup functionality.",
+            title: "Assisted Session Logging",
+            description: "Automatic extraction of metadata from images, plus integration with weather and astronomy APIs.",
             status: "upcoming",
         },
         {
@@ -30,8 +30,8 @@ export default function Product() {
             status: "upcoming",
         },
         {
-            title: "Assisted Session Logging",
-            description: "Automatic extraction of metadata from images, plus integration with weather and astronomy APIs.",
+            title: "Image Gallery",
+            description: "Personal gallery to view, organize, and showcase processed astrophotography results.",
             status: "upcoming",
         },
         {
@@ -45,6 +45,7 @@ export default function Product() {
             status: "upcoming",
         },
     ];
+
 
     return (
         <div className={styles.page}>

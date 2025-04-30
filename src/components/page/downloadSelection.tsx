@@ -33,7 +33,7 @@ const downloadLinks: Record<string, Record<string, string>> = {
 
 export default function DownloadSelection({ className }: { className?: string }) {
     return (
-        <div className={cn(className, "mt-80 rounded-lg border border-zinc-800 overflow-hidden")}>
+        <div className={cn(className, "rounded-lg border border-zinc-800 overflow-hidden")}>
             <Table>
                 <TableHeader className="bg-zinc-900">
                     <TableRow className="hover:bg-zinc-900/80">
