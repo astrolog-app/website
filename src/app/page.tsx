@@ -1,7 +1,7 @@
 import {Button} from '@/components/ui/button';
 import styles from './page.module.scss';
 import FeatureCard from '@/components/featureCard';
-import {AnalyticsSVG, BackupSVG, GallerySVG, LogSVG, OpenSourceSVG, RocketSVG} from '@/public/svgs';
+import {AnalyticsSVG, LogSVG, OpenSourceSVG, RocketSVG} from '@/public/svgs';
 import NavBar from '@/components/navBar';
 import Footer from '@/components/footer';
 import Link from "next/link";
