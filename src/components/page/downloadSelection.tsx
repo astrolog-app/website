@@ -1,17 +1,17 @@
 "use client";
 
-import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
 import {Button} from "@/components/ui/button";
-import {useEffect, useState} from "react";
+import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
+import {Download} from "lucide-react";
 import {cn} from "@/lib/utils";
 
-const osExtensions: Record<string, string[]> = {
+const downloadOptions = {
     windows: [".exe", ".msi"],
-    macos: [".dmg", ".dmg-arm"],
+    macOS: [".dmg", ".dmg-arm"],
     linux: [".AppImage", ".deb", ".tar.gz", ".tar.gz-arm"],
-};
+}
 
-const version = "0.1.0";
+const version = "0.1.0"
 const basePath = `https://github.com/astrolog-app/astrolog/releases/download/astrolog-v${version}/`;
 
 const downloadLinks: Record<string, Record<string, string>> = {
@@ -32,60 +32,48 @@ const downloadLinks: Record<string, Record<string, string>> = {
 };
 
 export default function DownloadSelection({ className }: { className?: string }) {
-    const [selectedOS, setSelectedOS] = useState<string>("windows");
-    const [selectedExt, setSelectedExt] = useState<string>(".exe");
-
-    useEffect(() => {
-        const platform = navigator.userAgent.toLowerCase();
-
-        if (platform.includes("win")) setSelectedOS("windows");
-        else if (platform.includes("mac")) setSelectedOS("macos");
-        else if (platform.includes("linux")) setSelectedOS("linux");
-        else setSelectedOS("windows");
-    }, []);
-
-    useEffect(() => {
-        if (selectedOS) {
-            setSelectedExt(osExtensions[selectedOS][0]);
-        }
-    }, [selectedOS]);
-
     return (
-        <div className={cn(className, "flex")}>
-            <Select value={selectedOS} onValueChange={(value) => setSelectedOS(value)}>
-                <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Operating System" />
-                </SelectTrigger>
-                <SelectContent>
-                    <SelectItem value="windows">Windows</SelectItem>
-                    <SelectItem value="macos">MacOS</SelectItem>
-                    <SelectItem value="linux">Linux</SelectItem>
-                </SelectContent>
-            </Select>
-
-            <Select value={selectedExt} onValueChange={(value) => setSelectedExt(value)}>
-                <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="File Extension" />
-                </SelectTrigger>
-                <SelectContent>
-                    {selectedOS &&
-                        osExtensions[selectedOS].map((ext) => (
-                            <SelectItem key={ext} value={ext}>
-                                {ext}
-                            </SelectItem>
-                        ))}
-                </SelectContent>
-            </Select>
-
-            <Button
-                onClick={() => {
-                    const url = downloadLinks[selectedOS]?.[selectedExt];
-                    if (url) window.open(url, "_blank");
-                }}
-            >
-
-                Download
-            </Button>
+        <div className={cn(className, "mt-80 rounded-lg border border-zinc-800 overflow-hidden")}>
+            <Table>
+                <TableHeader className="bg-zinc-900">
+                    <TableRow className="hover:bg-zinc-900/80">
+                        <TableHead className="text-zinc-400 w-[200px]">Platform</TableHead>
+                        <TableHead className="text-zinc-400">Download Options</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    {Object.entries(downloadOptions).map(([os, extensions]) => (
+                        <TableRow key={os} className="border-zinc-800 hover:bg-zinc-900/50">
+                            <TableCell className="font-medium capitalize text-zinc-200">{os}</TableCell>
+                            <TableCell>
+                                <div className="flex flex-wrap gap-2">
+                                    {extensions.map((ext) => (
+                                        <Button
+                                            key={ext}
+                                            variant="outline"
+                                            size="sm"
+                                            className="border-zinc-800 bg-zinc-900 hover:bg-red-950 hover:text-red-400 hover:border-red-900 transition-colors"
+                                            onClick={() => {
+                                                const url = downloadLinks[os][ext];
+                                                const a = document.createElement('a');
+                                                a.href = url;
+                                                a.download = '';
+                                                document.body.appendChild(a);
+                                                a.click();
+                                                document.body.removeChild(a);
+                                            }}
+                                        >
+                                            <Download className="mr-2 h-4 w-4 text-red-500"/>
+                                            <span className="mr-1">v{version}</span>
+                                            <span className="text-zinc-400">{ext}</span>
+                                        </Button>
+                                    ))}
+                                </div>
+                            </TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
         </div>
     );
 }
