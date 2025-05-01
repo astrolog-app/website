@@ -9,6 +9,7 @@ export interface RoadmapStep {
 
 interface RoadmapProps {
     className?: string
+    id?: string,
     steps: RoadmapStep[]
     title?: string
     subtitle?: string
@@ -16,12 +17,13 @@ interface RoadmapProps {
 
 export function Roadmap({
                             className,
+                            id,
                             steps,
                             title = "AstroLog Roadmap",
                             subtitle = "The development journey of AstroLog"
                         }: RoadmapProps) {
     return (
-        <div className={cn(className, "w-full text-zinc-100")}>
+        <div id={id} className={cn(className, "w-full text-zinc-100")}>
             <div className="mb-12 text-center">
                 <h2 className="text-2xl font-bold mb-2">{title}</h2>
                 <p className="text-zinc-400">{subtitle}</p>

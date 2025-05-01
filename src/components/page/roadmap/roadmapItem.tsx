@@ -14,15 +14,15 @@ export function RoadmapItem({step, layout, side}: RoadmapItemProps) {
             case "completed":
                 return (
                     <div className="relative">
-                        <div className="absolute inset-0 rounded-full bg-red-500/20 blur-md"></div>
-                        <CheckCircle className="h-8 w-8 text-red-500 relative z-10"/>
+                        <div className="absolute inset-0 rounded-full bg-primary/20 blur-md"></div>
+                        <CheckCircle className="h-8 w-8 text-primary relative z-10"/>
                     </div>
                 )
             case "current":
                 return (
                     <div className="relative">
-                        <div className="absolute inset-0 rounded-full bg-red-500/30 blur-md animate-pulse"></div>
-                        <CircleDot className="h-8 w-8 text-red-500 relative z-10"/>
+                        <div className="absolute inset-0 rounded-full bg-primary/30 blur-md animate-pulse"></div>
+                        <CircleDot className="h-8 w-8 text-primary relative z-10"/>
                     </div>
                 )
             default:
@@ -50,7 +50,7 @@ export function RoadmapItem({step, layout, side}: RoadmapItemProps) {
             case "completed":
                 return "text-zinc-100"
             case "current":
-                return "text-red-500"
+                return "text-primary"
             default:
                 return "text-zinc-400"
         }

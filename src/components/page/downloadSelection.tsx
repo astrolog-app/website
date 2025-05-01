@@ -6,11 +6,21 @@ import {Download} from "lucide-react";
 import {cn} from "@/lib/utils";
 
 const downloadOptions = {
-    windows: [".exe", ".msi"],
-    macOS: [".dmg", ".dmg-arm"],
-    linux: [".AppImage", ".deb", ".tar.gz", ".tar.gz-arm"],
-}
-
+    windows: [
+        { ext: ".exe", label: "EXE Installer" },
+        { ext: ".msi", label: "MSI Installer" },
+    ],
+    macos: [
+        { ext: ".dmg-arm", label: "Apple Silicon (M1/M2)" },
+        { ext: ".dmg", label: "Intel (x64)" },
+    ],
+    linux: [
+        { ext: ".deb", label: "DEB Package" },
+        { ext: ".AppImage", label: "AppImage" },
+        { ext: ".tar.gz", label: "Tarball (x64)" },
+        { ext: ".tar.gz-arm", label: "Tarball (ARM)" },
+    ],
+};
 const version = "0.1.0"
 const basePath = `https://github.com/astrolog-app/astrolog/releases/download/astrolog-v${version}/`;
 
@@ -47,27 +57,33 @@ export default function DownloadSelection({ className }: { className?: string })
                             <TableCell className="font-medium capitalize text-zinc-200">{os}</TableCell>
                             <TableCell>
                                 <div className="flex flex-wrap gap-2">
-                                    {extensions.map((ext) => (
-                                        <Button
-                                            key={ext}
-                                            variant="outline"
-                                            size="sm"
-                                            className="border-zinc-800 bg-zinc-900 hover:bg-red-950 hover:text-red-400 hover:border-red-900 transition-colors"
-                                            onClick={() => {
-                                                const url = downloadLinks[os][ext];
-                                                const a = document.createElement('a');
-                                                a.href = url;
-                                                a.download = '';
-                                                document.body.appendChild(a);
-                                                a.click();
-                                                document.body.removeChild(a);
-                                            }}
-                                        >
-                                            <Download className="mr-2 h-4 w-4 text-red-500"/>
-                                            <span className="mr-1">v{version}</span>
-                                            <span className="text-zinc-400">{ext}</span>
-                                        </Button>
-                                    ))}
+                                    {extensions.map(({ ext, label }) => {
+                                        const normalizedOS = os.toLowerCase();
+                                        const url = downloadLinks[normalizedOS]?.[ext];
+                                        if (!url) return null;
+
+                                        return (
+                                            <Button
+                                                key={ext}
+                                                variant="outline"
+                                                size="sm"
+                                                className="border-zinc-800 bg-zinc-900 hover:bg-red-950 hover:text-red-400 hover:border-red-900 transition-colors"
+                                                onClick={() => {
+                                                    const a = document.createElement("a");
+                                                    a.href = url;
+                                                    a.download = "";
+                                                    document.body.appendChild(a);
+                                                    a.click();
+                                                    document.body.removeChild(a);
+                                                }}
+                                            >
+                                                <Download className="mr-2 h-4 w-4 text-red-500" />
+                                                <span className="mr-1">v{version}</span>
+                                                <span className="text-zinc-400">{label}</span>
+                                            </Button>
+                                        );
+                                    })}
+
                                 </div>
                             </TableCell>
                         </TableRow>

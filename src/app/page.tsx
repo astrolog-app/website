@@ -1,11 +1,11 @@
-import {Button} from '@/components/ui/button';
 import styles from './page.module.scss';
 import FeatureCard from '@/components/featureCard';
-import {AnalyticsSVG, LogSVG, OpenSourceSVG, RocketSVG} from '@/public/svgs';
+import {AnalyticsSVG, LogSVG, OpenSourceSVG, RocketSVG} from '../../public/svgs';
 import NavBar from '@/components/navBar';
 import Footer from '@/components/footer';
-import Link from "next/link";
 import {Roadmap, RoadmapStep} from "@/components/page/roadmap/roadmap";
+import CallToAction from "@/components/page/callToAction";
+import Header from "@/components/page/header";
 
 export default function Product() {
     const roadmapSteps: RoadmapStep[] = [
@@ -29,11 +29,11 @@ export default function Product() {
             description: "Session and equipment performance insights through interactive statistics and visualizations.",
             status: "upcoming",
         },
-        {
-            title: "Image Gallery",
-            description: "Personal gallery to view, organize, and showcase processed astrophotography results.",
-            status: "upcoming",
-        },
+        // {
+        //     title: "Image Gallery",
+        //     description: "Personal gallery to view, organize, and showcase processed astrophotography results.",
+        //     status: "upcoming",
+        // },
         {
             title: "Full N.I.N.A. Integration",
             description: "Automated logging of all images captured using N.I.N.A., with full metadata import.",
@@ -46,7 +46,6 @@ export default function Product() {
         },
     ];
 
-
     return (
         <div className={styles.page}>
             <NavBar/>
@@ -54,30 +53,7 @@ export default function Product() {
             <div className={styles.lights}/>
             <div className={styles.pageContent}>
                 <div className={styles.landing}>
-                    <div className={styles.title}>AstroLog</div>
-                    <div className={styles.subTitle}>
-                        The astrophotography application for automatically logging and classifying
-                        imaging sessions.
-                    </div>
-                    <div className={styles.buttons}>
-                        <Button
-                            asChild
-                            className={styles.button}
-                        >
-                            <Link href='/purchase'>
-                                Purchase
-                            </Link>
-                        </Button>
-                        <Button
-                            asChild
-                            className={styles.button}
-                            variant='ghost'
-                        >
-                            <Link href='/downloads'>
-                                Download for free
-                            </Link>
-                        </Button>
-                    </div>
+                    <Header className="mb-10 md:mb-0" />
                 </div>
                 <div className={styles.features}>
                     <FeatureCard icon={<LogSVG/>} iconColor='rgb(94, 79, 162)' title="Log & Classify">
@@ -102,22 +78,19 @@ export default function Product() {
                     </FeatureCard>
                 </div>
             </div>
-            <div>
-            </div>
             <div className={styles.test}>
                 <svg viewBox="0 0 1440 58" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" className={styles.svg}>
                     <path
                         d="M-100 58C-100 58 218.416 36.3297 693.5 36.3297C1168.58 36.3297 1487 58 1487 58V-3.8147e-06H-100V58Z"></path>
                 </svg>
-                <Roadmap steps={roadmapSteps} className={styles.roadmap} />
+                <Roadmap id="roadmap" steps={roadmapSteps} className={styles.roadmap} />
                 <svg className={styles.bottomSvg} viewBox="0 0 1440 58" fill="none" xmlns="http://www.w3.org/2000/svg"
                      width="100%">
                     <path
                         d="M-100 58C-100 58 218.416 36.3297 693.5 36.3297C1168.58 36.3297 1487 58 1487 58V-3.8147e-06H-100V58Z"></path>
                 </svg>
             </div>
-            <div className={styles.test2}>
-            </div>
+            <CallToAction className="mb-16 mt-10" />
             <Footer/>
         </div>
     );
