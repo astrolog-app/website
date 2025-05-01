@@ -11,7 +11,7 @@ export default function CallToAction({ className }: { className?: string }) {
                 Keep track of your sessions, equipment, and raw data — all in one place.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button asChild size="lg">
+                <Button asChild size="lg" className="w-fit mr-auto ml-auto">
                     <Link href='/downloads'>
                         <Download className="mr-2 h-4 w-4"/> Download Beta
                     </Link>
