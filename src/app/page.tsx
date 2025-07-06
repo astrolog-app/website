@@ -25,6 +25,11 @@ export default function Product() {
             status: "upcoming",
         },
         {
+            title: "Full N.I.N.A. Integration",
+            description: "Automated logging of all images captured using N.I.N.A., with full metadata import.",
+            status: "upcoming",
+        },
+        {
             title: "Advanced Analytics",
             description: "Session and equipment performance insights through interactive statistics and visualizations.",
             status: "upcoming",
@@ -34,11 +39,6 @@ export default function Product() {
         //     description: "Personal gallery to view, organize, and showcase processed astrophotography results.",
         //     status: "upcoming",
         // },
-        {
-            title: "Full N.I.N.A. Integration",
-            description: "Automated logging of all images captured using N.I.N.A., with full metadata import.",
-            status: "upcoming",
-        },
         {
             title: "Community Features",
             description: "Implementation of features requested and shaped by the AstroLog user community.",
