@@ -11,7 +11,7 @@ const downloadOptions = {
         { ext: ".msi", label: "MSI Installer" },
     ],
     macos: [
-        { ext: ".dmg-arm", label: "Apple Silicon (M1/M2)" },
+        { ext: ".dmg-arm", label: "Apple Silicon (M1/M2/M3)" },
         { ext: ".dmg", label: "Intel (x64)" },
     ],
     linux: [
@@ -42,7 +42,7 @@ const downloadLinks: Record<string, Record<string, string>> = {
 
 export default function DownloadSelection({ className }: { className?: string }) {
     return (
-        <div className={cn(className, "rounded-lg border border-zinc-800 overflow-hidden")}>
+        <div className={cn(className, "rounded-lg border border-zinc-800 overflow-hidden w-full")}>
             <Table>
                 <TableHeader className="bg-zinc-900">
                     <TableRow className="hover:bg-zinc-900/80">
