@@ -27,7 +27,6 @@ const basePath = `https://github.com/astrolog-app/astrolog/releases/download/ast
 const downloadLinks: Record<string, Record<string, string>> = {
     windows: {
         ".exe": `${basePath}AstroLog_${version}_x64-setup.exe`,
-        ".msi": `${basePath}AstroLog_${version}_x64_en-US.msi`,
     },
     macos: {
         ".dmg": `${basePath}AstroLog_${version}_x64.dmg`,

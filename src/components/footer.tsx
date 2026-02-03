@@ -22,7 +22,7 @@ export default function Footer() {
                     <div className={styles.title}>Support</div>
                     <Link href='https://docs.astro-log.app/' className={styles.link}>Documentation</Link>
                     <Link href='' className={styles.link}>Community Forum</Link>
-                    <Link href='/licenseKey' className={styles.link}>License Key</Link>
+                    {/*<Link href='/licenseKey' className={styles.link}>License Key</Link>*/}
                 </div>
                 <div className={styles.section}>
                     <div className={styles.title}>Social Media</div>

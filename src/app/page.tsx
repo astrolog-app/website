@@ -90,7 +90,7 @@ export default function Product() {
                         d="M-100 58C-100 58 218.416 36.3297 693.5 36.3297C1168.58 36.3297 1487 58 1487 58V-3.8147e-06H-100V58Z"></path>
                 </svg>
             </div>
-            <CallToAction className="mb-16 mt-10" />
+            <CallToAction className="mb-16 mt-16" />
             <Footer/>
         </div>
     );

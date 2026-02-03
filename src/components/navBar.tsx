@@ -17,7 +17,7 @@ export default function NavBar() {
                 </div>
                 <div className={`${styles.navigation} ${menuOpen ? styles.open : ''}`}>
                     <Link href='/' onClick={() => setMenuOpen(false)}>Product</Link>
-                    <Link href='/purchase' onClick={() => setMenuOpen(false)}>Purchase</Link>
+                    {/*<Link href='/purchase' onClick={() => setMenuOpen(false)}>Purchase</Link>*/}
                     <Link href='/downloads' onClick={() => setMenuOpen(false)}>Downloads</Link>
                     <Link href='/about' onClick={() => setMenuOpen(false)}>About</Link>
                 </div>
