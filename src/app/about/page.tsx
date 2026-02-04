@@ -25,7 +25,11 @@ export default function About() {
                     />
                     <div className={styles.creatorInfo}>
                         <h2 className={styles.creatorName}>Rouven Spaar</h2>
-                        <p className={styles.creatorRole}>Creator & Developer</p>
+                        <p className={styles.creatorRole}>Solo Developer & ETH Zurich Student</p>
+                        <p className={styles.creatorBio}>
+                            Computer Science student at ETH Zurich with a passion for astrophotography 
+                            and building tools that make a difference.
+                        </p>
                         <div className={styles.socialLinks}>
                             <Link 
                                 href="https://github.com/astrolog-app/astrolog" 
@@ -65,10 +69,10 @@ export default function About() {
                 </section>
 
                 <section className={styles.missionSection}>
-                    <h2 className={styles.sectionTitle}>Our Mission</h2>
+                    <h2 className={styles.sectionTitle}>The Mission</h2>
                     <p className={styles.paragraph}>
-                        Our mission is to empower astrophotographers of all skill levels with tools that 
-                        make logging and analyzing imaging sessions effortless. We believe that great 
+                        My mission is to empower astrophotographers of all skill levels with tools that 
+                        make logging and analyzing imaging sessions effortless. I believe that great 
                         software should stay out of your way and let you focus on what you love — 
                         exploring the night sky.
                     </p>
@@ -77,9 +81,9 @@ export default function About() {
                 <section className={styles.openSourceSection}>
                     <h2 className={styles.sectionTitle}>Open Source</h2>
                     <p className={styles.paragraph}>
-                        AstroLog is proudly open source. We believe in transparency and community-driven 
+                        AstroLog is proudly open source. I believe in transparency and community-driven 
                         development. Whether you want to contribute code, report bugs, or suggest features, 
-                        {"we'd"} love to have you as part of the AstroLog community.
+                        {"I'd"} love to have you as part of the AstroLog community.
                     </p>
                     <Link 
                         href="https://github.com/astrolog-app/astrolog" 
@@ -94,23 +98,12 @@ export default function About() {
 
                 <section className={styles.techSection}>
                     <h2 className={styles.sectionTitle}>Built With</h2>
-                    <div className={styles.techGrid}>
-                        <div className={styles.techItem}>
-                            <span className={styles.techName}>Rust</span>
-                            <span className={styles.techDescription}>Blazing fast backend</span>
-                        </div>
-                        <div className={styles.techItem}>
-                            <span className={styles.techName}>Tauri</span>
-                            <span className={styles.techDescription}>Cross-platform framework</span>
-                        </div>
-                        <div className={styles.techItem}>
-                            <span className={styles.techName}>React</span>
-                            <span className={styles.techDescription}>Modern UI library</span>
-                        </div>
-                        <div className={styles.techItem}>
-                            <span className={styles.techName}>TypeScript</span>
-                            <span className={styles.techDescription}>Type-safe development</span>
-                        </div>
+                    <div className={styles.techStack}>
+                        <div className={styles.techBadge}>Next.js</div>
+                        <div className={styles.techBadge}>Tauri</div>
+                        <div className={styles.techBadge}>React</div>
+                        <div className={styles.techBadge}>TypeScript</div>
+                        <div className={styles.techBadge}>Rust</div>
                     </div>
                 </section>
             </PageContent>
