@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 import DownloadSelection from "@/components/page/downloadSelection";
 import PageTitle from "@/components/page/pageTitle";
 import type { LucideIcon } from "lucide-react"
-import { Monitor, Apple, Terminal, Cpu, MemoryStick, HardDrive } from "lucide-react"
+import { Monitor, Apple, Terminal, Cpu, MemoryStick, HardDrive, Github, Tag } from "lucide-react"
 import { AlertTriangle } from "lucide-react"
 import {
     Accordion,
@@ -14,6 +14,9 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import {cn} from "@/lib/utils";
+import Link from "next/link";
+
+const VERSION = "0.1.0";
 
 export default function Downloads() {
     return (
@@ -21,9 +24,28 @@ export default function Downloads() {
             <NavBar />
             <PageContent>
                 <PageTitle>Downloads</PageTitle>
+                
+                <div className="mt-6 flex flex-wrap items-center gap-4">
+                    <div className="flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-4 py-1.5">
+                        <Tag className="h-4 w-4 text-primary" />
+                        <span className="text-sm font-medium text-primary">v{VERSION}</span>
+                    </div>
+                    <Link 
+                        href="https://github.com/astrolog-app/astrolog/releases" 
+                        target="_blank"
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                        <Github className="h-4 w-4" />
+                        View all releases
+                    </Link>
+                </div>
+
                 <DownloadSelection className="mt-8" />
-                <SystemRequirements className="mt-14" />
-                <SecurityWarning className="mt-10" />
+                
+                <div className="mt-14 grid gap-8 lg:grid-cols-2">
+                    <SystemRequirements />
+                    <SecurityWarning />
+                </div>
             </PageContent>
             <Footer />
         </Page>
@@ -31,12 +53,12 @@ export default function Downloads() {
 }
 
 const requirements: { icon: LucideIcon; label: string; value: string }[] = [
-    { icon: Monitor, label: "Windows", value: "Windows 10 or newer (x64)" },
+    { icon: Monitor, label: "Windows", value: "Windows 10+ (x64)" },
     { icon: Apple, label: "macOS", value: "macOS 12+ (Intel & Apple Silicon)" },
-    { icon: Terminal, label: "Linux", value: "Ubuntu 20.04+, Debian-based, or compatible" },
-    { icon: Cpu, label: "CPU", value: "x64 or ARM (see builds above)" },
+    { icon: Terminal, label: "Linux", value: "Ubuntu 20.04+, Debian-based" },
+    { icon: Cpu, label: "CPU", value: "x64 or ARM" },
     { icon: MemoryStick, label: "RAM", value: "1 GB+" },
-    { icon: HardDrive, label: "Disk Space", value: "~50 MB for app + storage for your astro images" },
+    { icon: HardDrive, label: "Disk", value: "~50 MB + image storage" },
 ]
 
 function SystemRequirements({ className } : { className?: string}) {
@@ -46,16 +68,16 @@ function SystemRequirements({ className } : { className?: string}) {
                 System Requirements
             </h2>
 
-            <div className="rounded-lg border border-border">
+            <div className="rounded-lg border border-border bg-card/50">
                 {requirements.map((req, index) => (
                     <div
                         key={req.label}
-                        className={`flex items-center gap-4 px-4 py-3 ${
+                        className={`flex items-center gap-3 px-4 py-2.5 ${
                             index !== requirements.length - 1 ? "border-b border-border" : ""
                         }`}
                     >
                         <req.icon className="h-4 w-4 shrink-0 text-muted-foreground" />
-                        <span className="w-24 shrink-0 text-sm font-medium text-foreground">{req.label}:</span>
+                        <span className="w-20 shrink-0 text-sm font-medium text-foreground">{req.label}</span>
                         <span className="text-sm text-muted-foreground">{req.value}</span>
                     </div>
                 ))}
@@ -100,33 +122,31 @@ function SecurityWarning({ className } : { className?: string}) {
                 Security Notice
             </h2>
 
-            <div className="rounded-lg border border-destructive/50 bg-destructive/10 ">
+            <div className="rounded-lg border border-amber-500/30 bg-amber-500/5">
                 <div className="flex gap-3 px-4 py-4">
-                    <AlertTriangle className="h-5 w-5 flex-shrink-0 text-destructive" />
-                    <div className="space-y-2">
+                    <AlertTriangle className="h-5 w-5 flex-shrink-0 text-amber-500" />
+                    <div className="space-y-1">
                         <p className="text-sm font-medium text-foreground">
                             Unsigned Application
                         </p>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                            This app is not signed with a developer certificate. Your operating
-                            system may display a security warning when you try to run it. This is
-                            expected — the app is safe to use.
+                            Your OS may show a security warning. The app is safe — I just {"don't"} have a code signing certificate yet.
                         </p>
                     </div>
                 </div>
 
-                <Accordion type="single" collapsible className="border-t border-warning/20">
+                <Accordion type="single" collapsible className="border-t border-amber-500/20">
                     {platformInstructions.map((item) => (
                         <AccordionItem
                             key={item.platform}
                             value={item.platform}
-                            className="border-warning/20 last:border-b-0"
+                            className="border-amber-500/20 last:border-b-0"
                         >
-                            <AccordionTrigger className="px-4 py-3 text-sm font-medium hover:bg-warning/5 hover:no-underline">
+                            <AccordionTrigger className="px-4 py-3 text-sm font-medium hover:bg-amber-500/5 hover:no-underline">
                                 {item.platform}
                             </AccordionTrigger>
                             <AccordionContent className="px-4 pb-4">
-                                <ol className="space-y-2 pl-4">
+                                <ol className="space-y-1.5 pl-4">
                                     {item.steps.map((step, stepIndex) => (
                                         <li
                                             key={stepIndex}
