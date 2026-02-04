@@ -53,7 +53,11 @@ export default function DownloadSelection({ className }: { className?: string })
                 <TableBody>
                     {Object.entries(downloadOptions).map(([os, extensions]) => (
                         <TableRow key={os} className="border-zinc-800 hover:bg-zinc-900/50">
-                            <TableCell className="font-medium capitalize text-zinc-200">{os}</TableCell>
+                            <TableCell className="font-medium text-zinc-200">
+                                {os === "macos"
+                                    ? "macOS"
+                                    : os.charAt(0).toUpperCase() + os.slice(1)}
+                            </TableCell>
                             <TableCell>
                                 <div className="flex flex-wrap gap-2">
                                     {extensions.map(({ ext, label }) => {

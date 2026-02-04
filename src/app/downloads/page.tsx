@@ -23,7 +23,7 @@ export default function Downloads() {
                 <PageTitle>Downloads</PageTitle>
                 <DownloadSelection className="mt-8" />
                 <SystemRequirements className="mt-14" />
-                <SecurityWarning className="mt-10" />
+                <SecurityWarning className="mt-10 w-full" />
             </PageContent>
             <Footer />
         </Page>
@@ -100,10 +100,10 @@ function SecurityWarning({ className } : { className?: string}) {
                 Security Notice
             </h2>
 
-            <div className="rounded-lg border border-destructive/50 bg-destructive/10 ">
+            <div className="rounded-lg border border-amber-500/30 bg-amber-500/5">
                 <div className="flex gap-3 px-4 py-4">
-                    <AlertTriangle className="h-5 w-5 flex-shrink-0 text-destructive" />
-                    <div className="space-y-2">
+                    <AlertTriangle className="h-5 w-5 flex-shrink-0 text-amber-500" />
+                    <div className="space-y-1">
                         <p className="text-sm font-medium text-foreground">
                             Unsigned Application
                         </p>
@@ -115,18 +115,18 @@ function SecurityWarning({ className } : { className?: string}) {
                     </div>
                 </div>
 
-                <Accordion type="single" collapsible className="border-t border-warning/20">
+                <Accordion type="single" collapsible className="border-t border-amber-500/20">
                     {platformInstructions.map((item) => (
                         <AccordionItem
                             key={item.platform}
                             value={item.platform}
-                            className="border-warning/20 last:border-b-0"
+                            className="border-amber-500/20 last:border-b-0"
                         >
-                            <AccordionTrigger className="px-4 py-3 text-sm font-medium hover:bg-warning/5 hover:no-underline">
+                            <AccordionTrigger className="px-4 py-3 text-sm font-medium hover:bg-amber-500/5 hover:no-underline">
                                 {item.platform}
                             </AccordionTrigger>
                             <AccordionContent className="px-4 pb-4">
-                                <ol className="space-y-2 pl-4">
+                                <ol className="space-y-1.5 pl-4">
                                     {item.steps.map((step, stepIndex) => (
                                         <li
                                             key={stepIndex}
