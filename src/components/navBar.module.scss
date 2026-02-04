@@ -65,19 +65,49 @@
       }
 
       .hamburger {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 0.5rem;
+        transition: background 200ms ease;
+
+        &:hover {
+          background: hsl(240, 3.7%, 15.9%);
+        }
       }
 
       .navigation {
         display: none;
         flex-direction: column;
-        position: absolute;
+        position: fixed;
         top: var(--nav-bar-height);
+        left: 0;
         right: 0;
-        width: 100%;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.3);
-        padding: 1rem 0;
+        bottom: 0;
+        background: hsl(20, 14.3%, 4.1%);
+        padding: 1.5rem;
+        gap: 0.5rem;
+        border-top: 1px solid hsl(240, 3.7%, 15.9%);
+
+        & > * {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+          font-size: 1.1rem;
+          font-weight: 500;
+          letter-spacing: 0.02rem;
+          border-radius: 0.75rem;
+          margin-right: 0;
+          transition: background 200ms ease, color 200ms ease;
+
+          &:hover {
+            background: hsl(240, 3.7%, 15.9%);
+            color: hsl(0, 0%, 95%);
+          }
+        }
       }
 
       .navigation.open {
