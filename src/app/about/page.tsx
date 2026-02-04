@@ -1,112 +1,130 @@
 import styles from './page.module.scss';
 import Footer from "@/components/footer";
 import Page from "@/components/page/page";
-import PageContent from "@/components/page/pageContent";
 import NavBar from "@/components/navBar";
-import PageTitle from "@/components/page/pageTitle";
 import Image from "next/image";
 import Link from "next/link";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Mail } from "lucide-react";
 
 export default function About() {
     return (
         <Page>
             <NavBar/>
-            <PageContent>
-                <PageTitle>About</PageTitle>
-                
-                <section className={styles.creatorSection}>
-                    <Image 
-                        alt="Rouven Spaar - Creator of AstroLog" 
-                        src="/profile.jpg" 
-                        width={200} 
-                        height={200} 
-                        className={styles.picture} 
-                    />
-                    <div className={styles.creatorInfo}>
-                        <h2 className={styles.creatorName}>Rouven Spaar</h2>
-                        <p className={styles.creatorRole}>Solo Developer & ETH Zurich Student</p>
-                        <p className={styles.creatorBio}>
-                            Computer Science student at ETH Zurich with a passion for astrophotography 
-                            and building tools that make a difference.
-                        </p>
-                        <div className={styles.socialLinks}>
+            <div className={styles.container}>
+                <div className={styles.layout}>
+                    {/* Left Column - Profile */}
+                    <aside className={styles.sidebar}>
+                        <Image 
+                            alt="Rouven Spaar" 
+                            src="/profile.jpg" 
+                            width={120} 
+                            height={120} 
+                            className={styles.avatar} 
+                        />
+                        <h1 className={styles.name}>Rouven Spaar</h1>
+                        <p className={styles.tagline}>Building AstroLog</p>
+                        
+                        <nav className={styles.nav}>
+                            <span className={styles.navActive}>About</span>
+                            <Link href="/#roadmap" className={styles.navLink}>Roadmap</Link>
+                            <Link href="/downloads" className={styles.navLink}>Downloads</Link>
+                        </nav>
+
+                        <div className={styles.links}>
                             <Link 
-                                href="https://github.com/astrolog-app/astrolog" 
-                                className={styles.socialLink}
+                                href="https://github.com/astrolog-app" 
+                                className={styles.iconLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label="GitHub"
                             >
-                                <Github size={18} />
-                                GitHub
+                                <Github size={20} />
                             </Link>
                             <Link 
                                 href="https://www.astrobin.com/users/Rouvi05/" 
-                                className={styles.socialLink}
+                                className={styles.iconLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label="AstroBin"
                             >
-                                <ExternalLink size={18} />
-                                AstroBin
+                                <ExternalLink size={20} />
+                            </Link>
+                            <Link 
+                                href="mailto:contact@astrolog.app" 
+                                className={styles.iconLink}
+                                aria-label="Email"
+                            >
+                                <Mail size={20} />
                             </Link>
                         </div>
-                    </div>
-                </section>
+                    </aside>
 
-                <section className={styles.storySection}>
-                    <h2 className={styles.sectionTitle}>The Story</h2>
-                    <p className={styles.paragraph}>
-                        AstroLog was born out of a personal need. As an astrophotographer, I found myself 
-                        struggling to keep track of all my imaging sessions, equipment configurations, 
-                        and the countless hours spent under the stars. Existing solutions were either 
-                        too complex, too expensive, or simply not designed with astrophotographers in mind.
-                    </p>
-                    <p className={styles.paragraph}>
-                        So I decided to build something better. AstroLog is designed from the ground up 
-                        to be the companion app every astrophotographer deserves — intuitive, fast, and 
-                        focused on what matters most: capturing the cosmos.
-                    </p>
-                </section>
+                    {/* Right Column - Content */}
+                    <main className={styles.content}>
+                        <p className={styles.intro}>
+                            {"I'm"} a Computer Science student at <span className={styles.highlight}>ETH Zurich</span> with 
+                            a deep passion for astrophotography. When {"I'm"} not studying algorithms or building software, 
+                            {"you'll"} find me under the night sky, capturing the cosmos through my telescope.
+                        </p>
 
-                <section className={styles.missionSection}>
-                    <h2 className={styles.sectionTitle}>The Mission</h2>
-                    <p className={styles.paragraph}>
-                        My mission is to empower astrophotographers of all skill levels with tools that 
-                        make logging and analyzing imaging sessions effortless. I believe that great 
-                        software should stay out of your way and let you focus on what you love — 
-                        exploring the night sky.
-                    </p>
-                </section>
+                        <p className={styles.text}>
+                            AstroLog started as a personal project born from frustration. After countless imaging 
+                            sessions, I found myself drowning in spreadsheets, trying to track equipment settings, 
+                            weather conditions, and which targets {"I'd"} captured. Existing tools were either too 
+                            complex or {"didn't"} understand the workflow of an astrophotographer.
+                        </p>
 
-                <section className={styles.openSourceSection}>
-                    <h2 className={styles.sectionTitle}>Open Source</h2>
-                    <p className={styles.paragraph}>
-                        AstroLog is proudly open source. I believe in transparency and community-driven 
-                        development. Whether you want to contribute code, report bugs, or suggest features, 
-                        {"I'd"} love to have you as part of the AstroLog community.
-                    </p>
-                    <Link 
-                        href="https://github.com/astrolog-app/astrolog" 
-                        className={styles.githubButton}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Github size={20} />
-                        View on GitHub
-                    </Link>
-                </section>
+                        <p className={styles.text}>
+                            So I built the tool I wished existed. AstroLog is designed to be fast, intuitive, 
+                            and focused on what matters most: helping you spend less time organizing and more 
+                            time imaging.
+                        </p>
 
-                <section className={styles.techSection}>
-                    <h2 className={styles.sectionTitle}>Built With</h2>
-                    <div className={styles.techStack}>
-                        <div className={styles.techBadge}>Next.js</div>
-                        <div className={styles.techBadge}>Tauri</div>
-                        <div className={styles.techBadge}>React</div>
-                        <div className={styles.techBadge}>TypeScript</div>
-                        <div className={styles.techBadge}>Rust</div>
-                    </div>
-                </section>
-            </PageContent>
+                        <div className={styles.section}>
+                            <h2 className={styles.sectionTitle}>Building</h2>
+                            <div className={styles.project}>
+                                <Link href="/" className={styles.projectTitle}>
+                                    AstroLog
+                                    <ExternalLink size={14} className={styles.projectIcon} />
+                                </Link>
+                                <p className={styles.projectDesc}>
+                                    Open source astrophotography logging and analytics app.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className={styles.section}>
+                            <h2 className={styles.sectionTitle}>Stack</h2>
+                            <div className={styles.stack}>
+                                <span className={styles.stackItem}>Next.js</span>
+                                <span className={styles.stackItem}>Tauri</span>
+                                <span className={styles.stackItem}>Rust</span>
+                                <span className={styles.stackItem}>TypeScript</span>
+                                <span className={styles.stackItem}>React</span>
+                            </div>
+                        </div>
+
+                        <div className={styles.section}>
+                            <h2 className={styles.sectionTitle}>Connect</h2>
+                            <p className={styles.text}>
+                                Find me on{' '}
+                                <Link href="https://github.com/astrolog-app" className={styles.link} target="_blank">
+                                    GitHub
+                                </Link>
+                                , view my work on{' '}
+                                <Link href="https://www.astrobin.com/users/Rouvi05/" className={styles.link} target="_blank">
+                                    AstroBin
+                                </Link>
+                                , or reach out via{' '}
+                                <Link href="mailto:contact@astrolog.app" className={styles.link}>
+                                    email
+                                </Link>
+                                .
+                            </p>
+                        </div>
+                    </main>
+                </div>
+            </div>
             <Footer/>
         </Page>
     );
